@@ -3,6 +3,7 @@ import game_functions as gf
 
 from settings import Settings
 from ship import Ship
+from alien import Alien
 
 def run_game():
     # initialize game and create screen object
@@ -17,18 +18,18 @@ def run_game():
     # Make a ship
     ship = Ship(screen)
 
+    # Make an alien
+    alien = Alien(screen)
+
     # Main loop for the game
     while True:
 
         # Record keyboard and mouse events
         gf.check_events()
+        # Update screen
+        gf.update_screen(ai_settings, screen, ship, alien)
 
-        # Redraw the screen each pass trough loop
-        screen.fill(ai_settings.bg_color)
-        ship.blitme()
 
-        # Make the most recently drawn screen visible
-        pygame.display.flip()
 
 
 run_game()
