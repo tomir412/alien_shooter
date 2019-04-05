@@ -2,6 +2,7 @@ import sys
 
 import pygame
 
+
 def check_events(ship):
     """Respond to keypresses and mouse events"""
     for event in pygame.event.get():
@@ -20,7 +21,6 @@ def check_events(ship):
                 ship.moving_right = False
             elif event.key == pygame.K_LEFT:
                 ship.moving_left = False
-
 
 
 def update_screen(ai_settings, screen, ship, alien):

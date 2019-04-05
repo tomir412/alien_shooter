@@ -5,6 +5,7 @@ from settings import Settings
 from ship import Ship
 from alien import Alien
 
+
 def run_game():
     # initialize game and create screen object
     pygame.init()
@@ -16,7 +17,7 @@ def run_game():
     bg_color = (230, 230, 230)
 
     # Make a ship
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
 
     # Make an alien
     alien = Alien(screen)
@@ -26,8 +27,6 @@ def run_game():
         gf.check_events(ship)
         ship.update()
         gf.update_screen(ai_settings, screen, ship, alien)
-
-
 
 
 run_game()
